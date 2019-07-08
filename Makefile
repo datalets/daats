@@ -30,3 +30,6 @@ fetch-data:
 
 conv-data:
 	cd data && ogr2ogr -lco GEOMETRY=AS_WKT -lco STRING_QUOTING=ALWAYS -t_srs "EPSG:4326" $(DATA_NAME).csv $(DATA_NAME).gpkg
+
+preview-extract:
+	cd data && awk "NR==1, NR==100" $(DATA_NAME).csv > preview.csv
