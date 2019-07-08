@@ -12,6 +12,24 @@ Run `make` in the root folder to fetch and convert the data. You need to have **
 
 [![](https://assets.okfn.org/p/data/img/logo.png) Preview Data Package](https://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Floleg%2Fbaumkataster-data%2Fmaster%2Fdatapackage.json)
 
+## Service
+
+This repository contains a minimalist backend service API based on the [Falcon](http://falconframework.org/) framework and [Pandas DataPackage Reader](https://github.com/rgieseke/pandas-datapackage-reader). To run:
+
+```
+cd api
+virtualenv env
+. env/bin/activate
+pip install -Ur requirements.txt
+python server.py
+```
+
+At this point you should see the message "Serving on port..." Test the API using a REST client such as [RESTer](https://github.com/frigus02/RESTer) with queries such as:
+
+`http://localhost:8000/tree?quartier=Oerlikon`
+
+Which gives you all the trees in 'Oerlikon'. You can adjust the amount of output with a `page` and `per_page` parameter in your query.
+
 ## License
 
 This package is licensed by its maintainers under the Public Domain Dedication

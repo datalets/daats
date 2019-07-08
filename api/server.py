@@ -32,7 +32,7 @@ class TreeResource:
         resp.status = falcon.HTTP_200
         resp.body = get_paginated_json(req, df)
 
-api.add_route('/tree', TreeResource(data))
+api.add_route('/tree', TreeResource(data['csv']))
 
 
 if __name__ == '__main__':
