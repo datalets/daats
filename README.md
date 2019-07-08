@@ -10,9 +10,7 @@ A CSV file was created based on the [GeoPackage](https://www.stadt-zuerich.ch/po
 
 Run `make` in the root folder to fetch and convert the data. You need to have **sqlite3** and **curl** commands available on your system.
 
-[![](https://assets.okfn.org/p/data/img/logo.png)](https://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Fschoolofdata-ch%2Fbaumkataster-data%2Fmaster%2Fdatapackage.json)
-
-[View this Data Package ](https://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Fschoolofdata-ch%2Fbaumkataster-data%2Fmaster%2Fdatapackage.json)
+[![](https://assets.okfn.org/p/data/img/logo.png) Preview Data Package](https://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Floleg%2Fbaumkataster-data%2Fmaster%2Fdatapackage.json)
 
 ## License
 
