@@ -19,7 +19,6 @@
 
 DATA_URL = https://data.stadt-zuerich.ch/dataset/baumkataster/resource/9e2d501e-0902-4449-a9f3-b65d1c7b3e23/download/baumkataster.gpkg
 DATA_NAME = baumkataster
-DATA_SQL = select primaryindex,kategorie,quartier,strasse,baumgattunglat,baumartlat,baumnamelat,baumnamedeu,baumnummer, status,baumtyp,baumtyptext,pflanzjahr,genauigkeit from Baumkataster
 
 
 all: build
@@ -30,4 +29,4 @@ fetch-data:
 	curl -X GET -L $(DATA_URL) > data/$(DATA_NAME).gpkg
 
 conv-data:
-	cd data && sqlite3 -header -csv $(DATA_NAME).gpkg "$(DATA_SQL)" > $(DATA_NAME).csv
+	cd data && ogr2ogr -lco GEOMETRY=AS_WKT -lco STRING_QUOTING=ALWAYS -t_srs "EPSG:4326" $(DATA_NAME).csv $(DATA_NAME).gpkg
