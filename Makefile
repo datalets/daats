@@ -19,11 +19,13 @@
 
 DATA_URL = https://data.stadt-zuerich.ch/dataset/baumkataster/resource/9e2d501e-0902-4449-a9f3-b65d1c7b3e23/download/baumkataster.gpkg
 DATA_NAME = baumkataster
-
+DATA_SQL = select primaryindex,kategorie,quartier,strasse,baumgattunglat,baumartlat,baumnamelat,baumnamedeu,baumnummer, status,baumtyp,baumtyptext,pflanzjahr,genauigkeit from Baumkataster
 
 all: build
+nogeom: build-sqlite
 
-build: fetch-data conv-data
+build: fetch-data conv-data preview-extract
+build-sqlite: fetch-data conv-data-sqlite
 
 fetch-data:
 	curl -X GET -L $(DATA_URL) > data/$(DATA_NAME).gpkg
@@ -33,3 +35,6 @@ conv-data:
 
 preview-extract:
 	cd data && awk "NR==1, NR==100" $(DATA_NAME).csv > preview.csv
+
+conv-data-sqlite:
+	cd data && sqlite3 -header -csv $(DATA_NAME).gpkg "$(DATA_SQL)" > $(DATA_NAME)-nogeom.csv
