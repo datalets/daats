@@ -13,7 +13,7 @@
   ],
   "sources": [
     {
-      "name": "Baumkataster der Stadt Zürich",
+      "title": "Baumkataster der Stadt Zürich",
       "url": "https://opendata.swiss/de/dataset/baumkataster-der-stadt-zurich"
     }
   ],
@@ -22,7 +22,7 @@
       "path": "data/preview.csv",
       "name": "preview",
       "schema": {
-        "fields": [{"name":"primaryindex","type":"integer","format":"default"},{"name":"kategorie","type":"string","format":"default"},{"name":"quartier","type":"string","format":"default"},{"name":"strasse","type":"string","format":"default"},{"name":"baumgattunglat","type":"string","format":"default"},{"name":"baumartlat","type":"string","format":"default"},{"name":"baumnamelat","type":"string","format":"default"},{"name":"baumnamedeu","type":"string","format":"default"},{"name":"baumnummer","type":"string","format":"default"},{"name":"status","type":"string","format":"default"},{"name":"baumtyp","type":"number","format":"default"},{"name":"baumtyptext","type":"string","format":"default"},{"name":"pflanzjahr","type":"number","format":"default"},{"name":"genauigkeit","type":"string","format":"default"}]
+        "fields": [{"name":"WKT","type":"string","format":"default"},{"name":"kategorie","type":"string","format":"default"},{"name":"quartier","type":"string","format":"default"},{"name":"strasse","type":"string","format":"default"},{"name":"baumgattunglat","type":"string","format":"default"},{"name":"baumartlat","type":"string","format":"default"},{"name":"baumnamelat","type":"string","format":"default"},{"name":"baumnamedeu","type":"string","format":"default"},{"name":"baumnummer","type":"string","format":"default"},{"name":"status","type":"string","format":"default"},{"name":"baumtyp","type":"number","format":"default"},{"name":"baumtyptext","type":"string","format":"default"},{"name":"pflanzjahr","type":"number","format":"default"},{"name":"genauigkeit","type":"string","format":"default"}]
       }
     },{
       "path": "data/baumkataster.gpkg",
@@ -33,8 +33,8 @@
       "schema": {
         "fields": [
           {
-            "name": "primaryindex",
-            "type": "integer",
+            "name": "WKT",
+            "type": "string",
             "format": "default"
           },
           {
@@ -110,9 +110,19 @@
     "name": "Opendata.ch - Swiss chapter of Open Knowledge",
     "email": "info@opendata.ch",
     "web": "http://opendata.ch"
+  },
+  {
+    "name": "Cividi",
+    "email": "info@cividi.ch",
+    "web": "http://cividi.ch"
   }],
   "maintainers":[{
     "name": "Oleg Lavrovsky",
     "web": "https://github.com/loleg/"
-  }]
+  },
+  {
+    "name": "Thorben Westerhuys",
+    "web": "https://github.com/n0rdlicht/"
+  }
+]
 }

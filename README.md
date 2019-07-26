@@ -8,7 +8,9 @@ This is a list of trees in the City of Zürich provided as a [Simple Data Format
 
 A CSV file was created based on the [GeoPackage](https://www.stadt-zuerich.ch/portal/de/index/ogd/werkstatt/gpkg.html) obtained from [opendata.swiss](https://opendata.swiss/de/dataset/baumkataster-der-stadt-zurich), and filtered to exclude binary blobs and extract data using an SQL query.
 
-Run `make` in the root folder to fetch and convert the data. You need to have **sqlite3** and **curl** commands available on your system.
+Run `make` in the root folder to fetch and convert the data. You need to have **ogr2ogr**, **awk** and **curl** commands available on your system. (Note on Windwows: make sure to have both ogr2ogr, e.g. if you have QGIS installed `C:\Program Files\QGIS 3.8\bin`, in your system path and the `GDAL_DATA` variable, e.g. to `C:\Program Files\QGIS 3.8\share\gdal`, set)
+
+In case **ogr2ogr** is not available, you can run `make nogeom`. For this **sqlite3** needs to be installed.
 
 [![](https://assets.okfn.org/p/data/img/logo.png) Preview Data Package](https://data.okfn.org/tools/view?url=https%3A%2F%2Fraw.githubusercontent.com%2Floleg%2Fbaumkataster-data%2Fmaster%2Fdatapackage.json)
 
