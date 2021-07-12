@@ -7,8 +7,8 @@ api = falcon.API()
 data = read_datapackage("..")
 
 def get_paginated_json(req, df):
-    per_page = int(req.get_param('per_page', 10))
-    page = (int(req.get_param('page', 1))-1)*per_page
+    per_page = int(req.get_param('per_page', required=False, default=10))
+    page = (int(req.get_param('page', required=False, default=1))-1)*per_page
     return df[page:page+per_page].to_json(orient='records')
 
 class TreeResource:

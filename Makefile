@@ -17,21 +17,23 @@
 # You should have received a copy of the GNU General Public License
 # along with the Data Package. If not, see <http://www.gnu.org/licenses/>.
 
-DATA_URL = https://data.stadt-zuerich.ch/dataset/baumkataster/resource/9e2d501e-0902-4449-a9f3-b65d1c7b3e23/download/baumkataster.gpkg
-DATA_NAME = baumkataster
+DATA_URL = https://www.stadt-zuerich.ch/geodaten/download/Baumkataster?format=10005
+DATA_NAME = data
 DATA_SQL = select primaryindex,kategorie,quartier,strasse,baumgattunglat,baumartlat,baumnamelat,baumnamedeu,baumnummer, status,baumtyp,baumtyptext,pflanzjahr,genauigkeit from Baumkataster
 
 all: build
 nogeom: build-sqlite
 
-build: fetch-data conv-data preview-extract
-build-sqlite: fetch-data conv-data-sqlite
+build: conv-data preview-extract
+build-sqlite: conv-data-sqlite
 
+# Would normally be part of the build steps above, mais cest la vie
 fetch-data:
 	curl -X GET -L $(DATA_URL) > data/$(DATA_NAME).gpkg
 
 conv-data:
-	cd data && ogr2ogr -lco GEOMETRY=AS_WKT -lco STRING_QUOTING=ALWAYS -t_srs "EPSG:4326" $(DATA_NAME).csv $(DATA_NAME).gpkg
+	rm -f data/gsz_*
+	cd data && ogr2ogr -lco GEOMETRY=AS_XY -lco STRING_QUOTING=ALWAYS -t_srs "EPSG:4326" $(DATA_NAME).csv $(DATA_NAME).gpkg
 
 preview-extract:
 	cd data && awk "NR==1, NR==100" $(DATA_NAME).csv > preview.csv
