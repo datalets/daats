@@ -17,8 +17,9 @@
 # You should have received a copy of the GNU General Public License
 # along with the Data Package. If not, see <http://www.gnu.org/licenses/>.
 
-DATA_URL = https://www.stadt-zuerich.ch/geodaten/download/Baumkataster?format=10005
+DATA_URL = https://www.stadt-zuerich.ch/geodaten/download/Baumkataster?format=10008
 DATA_NAME = data
+DATA_SRC = gsz.baumkataster_baumstandorte
 DATA_SQL = select primaryindex,kategorie,quartier,strasse,baumgattunglat,baumartlat,baumnamelat,baumnamedeu,baumnummer, status,baumtyp,baumtyptext,pflanzjahr,genauigkeit from Baumkataster
 
 all: build
@@ -33,7 +34,7 @@ fetch-data:
 
 conv-data:
 	rm -f data/gsz_*
-	cd data && ogr2ogr -lco GEOMETRY=AS_XY -lco STRING_QUOTING=ALWAYS -t_srs "EPSG:4326" $(DATA_NAME).csv $(DATA_NAME).gpkg
+	cd data && ogr2ogr -lco GEOMETRY=AS_WKT -lco STRING_QUOTING=ALWAYS -t_srs "EPSG:4326" $(DATA_NAME).csv $(DATA_SRC).csv
 
 preview-extract:
 	cd data && awk "NR==1, NR==100" $(DATA_NAME).csv > preview.csv
