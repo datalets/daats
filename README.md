@@ -1,12 +1,16 @@
 # DaaS Package
 
-This is a template repository, based on the earlier [baumkataster-data](https://github.com/schoolofdata-ch/baumkataster-data) project, which lets you create a quick API around your Frictionless [Data Package](https://frictionlessdata.io/)
+This is a template repository, which lets you create a quick API around your Frictionless [Data Package](https://frictionlessdata.io/). This could be useful in several ways: as a microservice for your frontend code, for integration with Web-based workflows, for more efficient access to larger datasets.
+
+This is based on an earlier [baumkataster](https://github.com/schoolofdata-ch/baumkataster-data) project.
 
 ## Getting started
 
 Place a `datapackage.json` file and `data` folder with your own data to start setting up an API.
 
-If you have not used Data Packages before, the easiest way to get started is to convert your dataset to a CSV file (or a set of CSV files), in UTF-8 format - which you can create with any spreadsheet program. Then use the [Data Package CLI](https://github.com/frictionlessdata/datapackage-py#cli) or [Create Frictionless Data](https://create.frictionlessdata.io) tool to generate a Data Package by clicking the "Load" button and then adding and defining the columns and metadata. "Download" and place the resulting files here.
+If you have not used Data Packages before, the easiest way to get started is to convert your dataset to a CSV file (or a set of CSV files), in UTF-8 format - which you can create with any spreadsheet program.
+
+Then, use the [Data Package CLI](https://github.com/frictionlessdata/datapackage-py#cli) or [Create Frictionless Data](https://create.frictionlessdata.io) tool to generate a Data Package by clicking the "Load" button and then adding and defining the columns and metadata. "Download" and place the resulting files here.
 
 ## Installation
 
