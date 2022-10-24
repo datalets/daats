@@ -28,7 +28,7 @@ Soon there will be a webpage where you can test the API. Until then ...
 
 Test the API using a REST client such as [RESTer](https://github.com/frigus02/RESTer) with queries such as:
 
-http://localhost:8000/<my resource name>?<column>=<query>
+`http://localhost:8000/[my resource name]?[column]=[query]`
 
 For instance, if you had a Resource in your Data Package with the name "tree", which has a "quartier" column, you can search for "Oerlikon" in it using:
 
