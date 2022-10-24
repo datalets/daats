@@ -1,2 +1,23 @@
+# Uncomment these lines to include your own data in the repository:
+
 data/*.gpkg
+data/*.csv
+datapackage.json
+
+# Uncomment this to allow Pipenv to manage your Python environment:
+
 api/Pipfile*
+
+# Common ignores
+node_modules/
+package-lock.json
+yarn.lock
+*.py[cod]
+coverage.xml
+profile/*.prof
+
+# Compressed assets
+*.gz
+
+# C extensions
+*.so

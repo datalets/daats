@@ -11,14 +11,14 @@ def get_paginated_json(req, df):
     page = (int(req.get_param('page', required=False, default=1))-1)*per_page
     return df[page:page+per_page].to_json(orient='records')
 
-class TreeResource:
+class DataResource:
 
     def __init__(self, data):
-        self.trees = data
+        self.resource = data
 
     def on_get(self, req, resp):
-        df = self.trees.copy()
-        for fld in self.trees._metadata['schema']['fields']:
+        df = self.resource.copy()
+        for fld in self.resource._metadata['schema']['fields']:
             fn = fld['name']
             q = req.get_param(fn, None)
             if q is not None:
@@ -32,8 +32,8 @@ class TreeResource:
         resp.status = falcon.HTTP_200
         resp.body = get_paginated_json(req, df)
 
-api.add_route('/tree', TreeResource(data['csv']))
-
+for resource in data['resources']:
+    api.add_route("/%s" % resource['name'], DataResource(resource))
 
 if __name__ == '__main__':
     with make_server('', 8000, api) as httpd:
