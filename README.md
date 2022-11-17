@@ -1,16 +1,14 @@
-# DaaS Package
+# Data as a (Tiny) Service
 
-This is a template repository, which lets you create a quick API around your Frictionless [Data Package](https://frictionlessdata.io/). This could be useful in several ways: as a microservice for your frontend code, for integration with Web-based workflows, for more efficient access to larger datasets.
+This is a template repository, which lets you create a quick API around your Frictionless [Data Package](https://frictionlessdata.io/). This could be useful in several ways: as a microservice for your SPA frontend, for integration with Web-based workflows, for more paginated access to larger datasets, for setting up a cheap and simple [Data as a service](https://en.wikipedia.org/wiki/Data_as_a_service) offering.
 
-This is based on an earlier [baumkataster](https://github.com/schoolofdata-ch/baumkataster-data) project.
+The open source code is based on Python and Pandas, and can be easily extended to fit the needs of your data science project.
 
 ## Getting started
 
 Place a `datapackage.json` file and `data` folder with your own data to start setting up an API.
 
-If you have not used Data Packages before, the easiest way to get started is to convert your dataset to a CSV file (or a set of CSV files), in UTF-8 format - which you can create with any spreadsheet program.
-
-Then, use the [Data Package CLI](https://github.com/frictionlessdata/datapackage-py#cli) or [Create Frictionless Data](https://create.frictionlessdata.io) tool to generate a Data Package by clicking the "Load" button and then adding and defining the columns and metadata. "Download" and place the resulting files here.
+If you have not used Data Packages before, an easy way to get started is to convert your dataset to a CSV file (or a set of CSV files), in UTF-8 format - which you can create with any spreadsheet program. Then, use the [Data Package CLI](https://github.com/frictionlessdata/datapackage-py#cli) or [Create Frictionless Data](https://create.frictionlessdata.io) tool to generate a Data Package by clicking the "Load" button and then adding and defining the columns and metadata. "Download" and place the resulting files here. Visit [frictionlessdata.io](https://frictionlessdata.io) for more advice on this.
 
 ## Installation
 
