@@ -1,4 +1,4 @@
-# Data as a (Tiny) Service
+# Data as a (tiny) Service
 
 This is a template repository, which lets you create a quick API around your Frictionless [Data Package](https://frictionlessdata.io/). This could be useful in several ways: as a microservice for your SPA frontend, for integration with Web-based workflows, for more paginated access to larger datasets, for setting up a cheap and simple [Data as a service](https://en.wikipedia.org/wiki/Data_as_a_service) offering.
 
