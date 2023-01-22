@@ -1,2 +1,2 @@
 falcon
-pandas-datapackage-reader
+frictionless==4.40.8
