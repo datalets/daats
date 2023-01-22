@@ -1,5 +1,5 @@
 # Uncomment these lines to include your own data in the repository:
-
+venv
 data/*.gpkg
 data/*.csv
 datapackage.json
