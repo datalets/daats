@@ -32,9 +32,13 @@ Test the API using a REST client such as [RESTer](https://github.com/frigus02/RE
 
 `http://localhost:8000/[my resource name]?[column]=[query]`
 
-For instance, if you had a Resource in your Data Package with the name "tree", which has a "quartier" column, you can search for "Oerlikon" in it using:
+For instance, if you wish to use ours `users` Resource to test the running server you could:
 
-http://localhost:8000/tree?quartier=Oerlikon
+http://localhost:8000/users
+
+Or filter values with:
+
+http://localhost:8000/users?name=Paul
 
 You can adjust the amount of output with a `page` and `per_page` parameter in your query.
 
