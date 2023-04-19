@@ -1,0 +1,42 @@
+{
+  "resources": [
+    {
+      "path": "data/users.csv",
+      "name": "users",
+      "title": "Usuários",
+      "description": "Lista de usuários cadastrados para recebimento de doações",
+      "profile": "tabular-data-resource",
+      "scheme": "file",
+      "format": "csv",
+      "hashing": "md5",
+      "encoding": "utf-8",
+      "schema": {
+        "fields": [
+          {
+            "type": "integer",
+            "name": "id"
+          },
+          {
+            "type": "string",
+            "name": "name",
+            "constraints": {
+              "required": true
+            }
+          },
+          {
+            "type": "integer",
+            "name": "age",
+            "constraints": {
+              "required": true
+            }
+          }
+        ],
+        "primaryKey": "id"
+      },
+      "dialect": {
+        "delimiter": ","
+      }
+    }
+  ],
+  "profile": "data-package"
+}
