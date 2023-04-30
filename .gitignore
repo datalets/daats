@@ -1,8 +1,6 @@
 # Uncomment these lines to include your own data in the repository:
 
-data/*.gpkg
-data/*.csv
-datapackage.json
+venv
 
 # Uncomment this to allow Pipenv to manage your Python environment:
 
